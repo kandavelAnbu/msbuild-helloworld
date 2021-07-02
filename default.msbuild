@@ -8,5 +8,10 @@
 	<Target Name="Build">
 		<Csc Sources="@(Compile)"/>  
 	</Target>
+	<Target Name="ZipOutputPath" AfterTargets="Build">
+        <ZipDirectory
+            SourceDirectory="$(OutputPath)"
+            DestinationFile="$(MSBuildProjectDirectory)\msBuildDemo.zip" />
+    	</Target>
   
 </Project>
