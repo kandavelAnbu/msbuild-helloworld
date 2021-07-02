@@ -11,7 +11,7 @@
 	<ItemGroup>
             <ZipFiles Include="**\*.*" Exclude="*.zip" />
         </ItemGroup>
-        <Target Name="Zip">
+        <Target Name="Zip" AfterTargets="Build">
             <Zip Files="@(ZipFiles)" 
                 ZipFileName="MSBuild.Community.Tasks.zip" />
         </Target>
