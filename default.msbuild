@@ -5,7 +5,7 @@
 		<Compile Include="src\HelloCS.cs" />
 	</ItemGroup>
   
-	<Target Name="Build">
+	<Target Name="Build" DependsOnTargets="Zip">
 		<Csc Sources="@(Compile)"/>  
 	</Target>
 	<ItemGroup>
