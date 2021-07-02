@@ -8,10 +8,12 @@
 	<Target Name="Build">
 		<Csc Sources="@(Compile)"/>  
 	</Target>
-	<Target Name="ZipOutputPath" AfterTargets="Build">
-        <ZipDirectory
-            SourceDirectory="$(src)"
-            DestinationFile="$(MSBuildProjectDirectory)\msBuildDemo.zip" />
-    	</Target>
+	<ItemGroup>
+            <ZipFiles Include="**\*.*" Exclude="*.zip" />
+        </ItemGroup>
+        <Target Name="Zip">
+            <Zip Files="@(ZipFiles)" 
+                ZipFileName="MSBuild.Community.Tasks.zip" />
+        </Target>
   
 </Project>
