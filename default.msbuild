@@ -10,7 +10,7 @@
 	</Target>
 	<Target Name="ZipOutputPath" AfterTargets="Build">
         <ZipDirectory
-            SourceDirectory="$(OutputPath)"
+            SourceDirectory="$(src)"
             DestinationFile="$(MSBuildProjectDirectory)\msBuildDemo.zip" />
     	</Target>
   
