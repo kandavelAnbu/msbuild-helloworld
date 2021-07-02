@@ -8,12 +8,4 @@
 	<Target Name="Build" DependsOnTargets="Zip">
 		<Csc Sources="@(Compile)"/>  
 	</Target>
-	<ItemGroup>
-            <ZipFiles Include="**\*.*" Exclude="*.zip" />
-        </ItemGroup>
-        <Target Name="Zip">
-            <Zip Files="@(ZipFiles)" 
-                ZipFileName="MSBuild.Community.Tasks.zip" />
-        </Target>
-  
 </Project>
